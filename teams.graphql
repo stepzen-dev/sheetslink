@@ -1,0 +1,14 @@
+
+type Team { 
+  Team__A:  String! 
+  City__B:  String 
+  Wins__C:  Float 
+  Losses__D:  Float 
+  GR__E:  Float 
+  Players: [Player]
+    @materializer(query:"playersByTeam" arguments:[{name:"team" field:"Team__A"}])
+}
+type Query {
+  teams(q:String! = ""): [Team]
+    @rest(endpoint:"https://sheets.apis.stepzen.com/159aOCvUOumcKE1kdRZ-6ohTkbjs2VfSEbSLdUjXDqMk/0")
+}

@@ -1,0 +1,9 @@
+schema
+  @sdl(
+    files: [
+      "teams.graphql"
+      "players.graphql"
+    ]
+  ) {
+  query: Query
+}

@@ -1,0 +1,14 @@
+
+type Player { 
+  Name__A:  String 
+  Goals__B:  Float 
+  Team__C:  String 
+}
+
+type Query {
+  players(q:String! = ""): [Player]
+    @rest(endpoint:"https://sheets.apis.stepzen.com/159aOCvUOumcKE1kdRZ-6ohTkbjs2VfSEbSLdUjXDqMk/383008360")
+
+  playersByTeam(team: String!): [Player]
+    @rest(endpoint:"https://sheets.apis.stepzen.com/159aOCvUOumcKE1kdRZ-6ohTkbjs2VfSEbSLdUjXDqMk/383008360?q=where%20C%20%3D%20%22$team;%22")
+}
